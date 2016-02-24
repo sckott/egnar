@@ -1,5 +1,5 @@
-rredlist
-========
+egnar
+=====
 
 [![Build Status](https://travis-ci.org/sckott/egnar.svg?branch=master)](https://travis-ci.org/sckott/egnar)
 
