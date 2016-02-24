@@ -1,0 +1,35 @@
+rredlist
+========
+
+[![Build Status](https://travis-ci.org/sckott/egnar.svg?branch=master)](https://travis-ci.org/sckott/egnar)
+
+[European Nucleotide Archive](http://www.ebi.ac.uk/ena)
+
+European Nucleotide Archive API docs
+
+* [data retrieval](http://www.ebi.ac.uk/ena/browse/data-retrieval-rest)
+* [search](http://www.ebi.ac.uk/ena/browse/search-rest)
+
+## Install
+
+Development version
+
+```{r eval=FALSE}
+devtools::install_github("sckott/egnar")
+```
+
+```{r}
+library("egnar")
+```
+
+## xxx
+
+xxx
+
+```{r}
+xxxx
+```
+
+## Meta
+
+* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
