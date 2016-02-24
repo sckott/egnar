@@ -1,0 +1,76 @@
+rredlist
+========
+
+[![Build Status](https://travis-ci.org/sckott/egnar.svg?branch=master)](https://travis-ci.org/sckott/egnar)
+
+[European Nucleotide Archive](http://www.ebi.ac.uk/ena)
+
+European Nucleotide Archive API docs
+
+* [data retrieval](http://www.ebi.ac.uk/ena/browse/data-retrieval-rest)
+* [search](http://www.ebi.ac.uk/ena/browse/search-rest)
+
+## Install
+
+Development version
+
+
+```r
+devtools::install_github("sckott/egnar")
+```
+
+
+```r
+library("egnar")
+```
+
+## search
+
+
+```r
+en_search(query = '"geo_circ(-0.587,-90.5713,170)"', result = 'sequence_release')
+```
+
+```
+## {xml_document}
+## <ROOT>
+##  [1] <entry accession="AM944843" version="1" entryVersion="2" dataClass= ...
+##  [2] <entry accession="AM944844" version="1" entryVersion="2" dataClass= ...
+##  [3] <entry accession="AM944845" version="1" entryVersion="2" dataClass= ...
+##  [4] <entry accession="AM944846" version="1" entryVersion="2" dataClass= ...
+##  [5] <entry accession="AM944847" version="1" entryVersion="2" dataClass= ...
+##  [6] <entry accession="AM944848" version="1" entryVersion="2" dataClass= ...
+##  [7] <entry accession="AM944849" version="1" entryVersion="2" dataClass= ...
+##  [8] <entry accession="AM944850" version="1" entryVersion="2" dataClass= ...
+##  [9] <entry accession="AM944851" version="1" entryVersion="2" dataClass= ...
+## [10] <entry accession="AM944852" version="1" entryVersion="2" dataClass= ...
+## [11] <entry accession="AM944853" version="1" entryVersion="2" dataClass= ...
+## [12] <entry accession="AM944854" version="1" entryVersion="2" dataClass= ...
+## [13] <entry accession="AM944855" version="1" entryVersion="2" dataClass= ...
+## [14] <entry accession="AM944856" version="1" entryVersion="2" dataClass= ...
+## [15] <entry accession="AM944857" version="1" entryVersion="2" dataClass= ...
+## [16] <entry accession="AM944858" version="1" entryVersion="2" dataClass= ...
+## [17] <entry accession="AM944859" version="1" entryVersion="2" dataClass= ...
+## [18] <entry accession="AM944860" version="1" entryVersion="2" dataClass= ...
+## [19] <entry accession="AM944861" version="1" entryVersion="2" dataClass= ...
+## [20] <entry accession="AM944862" version="1" entryVersion="2" dataClass= ...
+## ...
+```
+
+## fetch data
+
+
+```r
+en_fetch(id = c('Taxon:4235', 'Taxon:6543'))
+```
+
+```
+## {xml_document}
+## <ROOT>
+## [1] <taxon scientificName="Lactuca" taxId="4235" parentTaxId="745062" ra ...
+## [2] <taxon scientificName="Arion rufus" taxId="6543" parentTaxId="6542"  ...
+```
+
+## Meta
+
+* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
