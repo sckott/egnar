@@ -4,12 +4,19 @@
 \alias{en_search}
 \title{Search for data}
 \usage{
-en_search(query = NULL, result = NULL, ...)
+en_search(query = NULL, result = NULL, limit = NULL, offset = NULL,
+  max = NULL, ...)
 }
 \arguments{
 \item{query}{Query terms}
 
 \item{result}{result option, one of: sequence_release, assembly, ...}
+
+\item{limit}{Number of results to return}
+
+\item{offset}{Result number to start at}
+
+\item{max}{Max results}
 
 \item{...}{Curl options passed to \code{\link[httr]{GET}}}
 }
@@ -21,9 +28,11 @@ Search for data
 }
 \examples{
 \dontrun{
-en_search(query = '"tax_tree(7147) AND dataclass="STD"')
 en_search(query = '"geo_circ(-0.587,-90.5713,170)"', result='sequence_release')
+en_search(query = '"geo_circ(-0.587,-90.5713,170)"', result='sequence_release', limit = 1)
 en_search(query = '"tax_eq(10090)"', result = 'assembly')
+## failing
+# en_search(query = '"tax_tree(7147) AND dataclass="STD"')
 }
 }
 
