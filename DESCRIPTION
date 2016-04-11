@@ -12,5 +12,6 @@ Imports:
     httr (>= 1.0.0),
     xml2 (>= 0.1.2)
 Suggests:
-    testthat
+    testthat,
+    covr
 RoxygenNote: 5.0.1
