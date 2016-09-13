@@ -2,16 +2,19 @@ Package: egnar
 Type: Package
 Title: European Nucleotide Archive Client
 Description: European Nucleotide Archive Client.
-Version: 0.0.1.9000
+Version: 0.0.3.9500
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com"))
 License: MIT + file LICENSE
 URL: https://github.com/sckott/egnar
 BugReports: https://github.com/sckott/egnar/issues
 Imports:
-    httr (>= 1.0.0),
-    xml2 (>= 0.1.2)
+    httr (>= 1.2.0),
+    xml2 (>= 1.0.0),
+    tibble (>= 1.2),
+    dplyr (>= 0.5.0)
 Suggests:
+    roxygen2 (>= 5.0.1),
     testthat,
     covr
 RoxygenNote: 5.0.1

@@ -3,8 +3,3 @@
 export(en_data)
 export(en_download)
 export(en_search)
-import(xml2)
-importFrom(httr,GET)
-importFrom(httr,content)
-importFrom(httr,stop_for_status)
-importFrom(httr,write_disk)

@@ -2,30 +2,49 @@
 % Please edit documentation in R/en_download.R
 \name{en_download}
 \alias{en_download}
-\title{Fetch data}
+\title{Download data}
 \usage{
-en_download(id = NULL, result = NULL, format = "xml", file = NULL, ...)
+en_download(id = NULL, result = NULL, format = "xml", limit = NULL,
+  offset = NULL, max = NULL, read = TRUE, ...)
 }
 \arguments{
-\item{id}{Ids of various sorts, combine in a vector for > 1}
+\item{id}{(character) Ids of various sorts, combine in a vector for > 1}
 
-\item{result}{result option, one of: sequence_release, assembly, ...}
+\item{result}{(character) result option, one of: sequence_release,
+assembly, ...}
 
-\item{format}{data format, one of xml (default), fasta, text, fastq}
+\item{format}{(character) data format, one of xml (default), fasta,
+text, fastq}
+
+\item{limit}{(integer) Number of results to return}
+
+\item{offset}{(integer) Result number to start at}
+
+\item{max}{(integer) Max results}
 
 \item{...}{Curl options passed to \code{\link[httr]{GET}}}
 }
 \value{
-data.frame
+file path as character string, or parsed data
 }
 \description{
-Fetch data
+Download data
+}
+\details{
+caching using \pkg{rappdirs}
 }
 \examples{
 \dontrun{
-en_download(id = 'Taxon:4235')
+en_download(id = 'Taxon:4235', limit = 10)
+en_download(id = 'Taxon:4235', limit = 10, read = FALSE)
+en_download(id = 'A00145', format = "fasta")
+en_download(id = 'A00145', format = "fastq")
+en_download(id = 'A00145', format = "text")
 en_download(id = c('Taxon:4235', 'Taxon:6543'))
-en_download(id = c('Taxon:Human', 'Taxon:Cat', 'Taxon:Mouse', 'Taxon:Zebrafish'))
+en_download(id = c('Taxon:4235', 'Taxon:6543'), read = FALSE)
 }
+}
+\references{
+\url{http://www.ebi.ac.uk/ena/browse/data-retrieval-rest}
 }
 
